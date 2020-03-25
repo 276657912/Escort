@@ -23,7 +23,7 @@ public final class Certification4Activity extends MyActivity {
     @Override
     protected void initView() {
         UserBean userBean=userBean();
-        userBean.setIsReal("1");
+        userBean.setIsReal(1);
         saveUserBean(userBean);
     }
 
