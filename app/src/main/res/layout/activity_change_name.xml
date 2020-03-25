@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.activity.CopyActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleSize="17sp"
+        app:rightTitle="确定"
+        app:rightColor="#FF333333"
+        app:title="更改昵称" />
+
+    <EditText
+        android:id="@+id/change_name"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:textSize="14sp"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_stroke_black"
+        android:ems="10"
+        android:paddingLeft="20dp"
+        android:textColorHint="#FF999999"
+        android:inputType="textPersonName"
+        android:hint="请输入你的昵称" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF999999"
+        android:textSize="12sp"
+        android:layout_marginLeft="40dp"
+        android:text="请输入你的昵称，昵称不能空缺~" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF333333"
+        android:textSize="15sp"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="0/10" />
+
+</LinearLayout>

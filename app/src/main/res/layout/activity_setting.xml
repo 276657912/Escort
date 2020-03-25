@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SettingActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleSize="17sp"
+        app:title="@string/setting_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:bar_leftSize="16sp"
+                        app:bar_leftText="缓存管理" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="@string/setting_cache"
+                        app:bar_rightIcon="@drawable/ico_go_black"
+                        app:bar_rightText="0.00M" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:bar_leftSize="16sp"
+                        app:bar_leftText="账户与安全" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="推送通知管理"
+                        app:bar_rightText="已开启"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="实名认证"
+                        app:bar_rightText="未开启"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="修改密码"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="修改绑定手机"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="账号注销"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:bar_leftSize="16sp"
+                        app:bar_leftText="关于感遇" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="意见与反馈"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="关于我们"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="用户协议"
+                        app:bar_rightIcon="@drawable/ico_go_black"/>
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="隐私政策"
+                        app:bar_rightIcon="@drawable/ico_go_black" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/menu11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftText="信息安全投诉举报"
+                        app:bar_rightIcon="@drawable/ico_go_black"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                style="@style/MyButtonStyle"
+                android:text="退出登录" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

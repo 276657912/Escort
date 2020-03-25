@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.activity.RegisterActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftColor="@color/colorAccent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
+            android:orientation="vertical"
+            tools:layoutAnimation="@null">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="昵称&amp;密码"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:drawableLeft="@drawable/icon_dot_orange"
+                android:drawablePadding="5dp"
+                android:text="取个好听的昵称吧~"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/nickName"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_stroke_black"
+                android:hint="请输入昵称（10字以内）"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:paddingLeft="21dp"
+                android:singleLine="true"
+                android:textColorHint="#999999" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:drawableLeft="@drawable/icon_dot_orange"
+                android:drawablePadding="5dp"
+                android:text="设置个好记的密码吧~"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passWord"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_stroke_black"
+                android:hint="请输入密码（6位以上）"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingLeft="21dp"
+                android:singleLine="true"
+                android:textColorHint="#999999" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_register_commit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:drawableTop="@drawable/icon_next"
+        android:gravity="center"
+        android:text="下一步" />
+</LinearLayout>

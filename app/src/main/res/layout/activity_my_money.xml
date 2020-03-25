@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    tools:context=".ui.activity.CopyActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleSize="17sp"
+        app:title="我的钱包" />
+
+    <LinearLayout
+        android:layout_width="355.2dp"
+        android:layout_height="154.45dp"
+        android:background="@drawable/my_money_bg"
+        android:gravity="center_vertical"
+        android:layout_marginTop="7.5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="当前余额（元）" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:textSize="50sp"
+            android:text="0.00" />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.hjq.widget.layout.SettingBar
+            android:id="@+id/ti_xian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_leftText="提现"
+            app:bar_leftIcon="@drawable/icon_money_tx"
+            app:bar_rightIcon="@drawable/ico_go_black"/>
+
+        <com.hjq.widget.layout.SettingBar
+            android:id="@+id/ming_xi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_leftText="账户明细"
+            app:bar_leftIcon="@drawable/icon_money_mx"
+            app:bar_rightIcon="@drawable/ico_go_black"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+</LinearLayout>

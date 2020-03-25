@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.CopyActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightTitle="预览"
+        app:title="编辑" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@mipmap/test_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@mipmap/test_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:layout_width="112dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/icon_take_pic">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_radius2_black60"
+                        android:text="头像"
+                        android:textColor="@color/white"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF000000"
+                        app:bar_leftSize="16sp"
+                        app:bar_leftText="资料设置" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/user_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="15sp"
+                        app:bar_leftText="ID"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="64826597" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/change_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="14sp"
+                        app:bar_leftText="昵称"
+                        app:bar_rightColor="#FF999999"
+                        app:bar_rightIcon="@drawable/ico_go_black"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="七喜—牙牙" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/change_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="14sp"
+                        app:bar_leftText="出生日期"
+                        app:bar_rightColor="#FF999999"
+                        app:bar_rightIcon="@drawable/ico_go_black"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="1990-05-16" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/user_constellation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="14sp"
+                        app:bar_leftText="星座"
+                        app:bar_rightColor="#FF999999"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="双子座" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="14sp"
+                        app:bar_leftText="年龄"
+                        app:bar_rightColor="#FF999999"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="29" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/change_autograph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="14sp"
+                        app:bar_leftText="个性签名"
+                        app:bar_rightColor="#FF999999"
+                        app:bar_rightIcon="@drawable/ico_go_black"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="请添加你的个性签名" />
+
+                    <com.hjq.widget.layout.SettingBar
+                        android:id="@+id/change_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:bar_leftColor="#FF333333"
+                        app:bar_leftSize="14sp"
+                        app:bar_leftText="个性标签"
+                        app:bar_rightColor="#FF999999"
+                        app:bar_rightIcon="@drawable/ico_go_black"
+                        app:bar_rightSize="12sp"
+                        app:bar_rightText="请添加你的个性标签" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

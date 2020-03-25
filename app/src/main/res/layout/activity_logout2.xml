@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.activity.RegisterActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:leftColor="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:layoutAnimation="@anim/layout_animation_fall_down"
+            android:orientation="vertical"
+            tools:layoutAnimation="@null">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="注销账号"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31.5dp"
+                android:drawableLeft="@drawable/icon_dot_orange"
+                android:drawablePadding="5dp"
+                android:text="验证码已通过短信发送至："
+                android:textColor="#FF666666"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.5dp"
+                android:drawableLeft="@drawable/icon_dot_orange"
+                android:drawablePadding="5dp"
+                android:text="137 5894 7807"
+                android:textColor="#FF666666"
+                android:textSize="15sp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="51dp"
+                android:drawablePadding="5dp"
+                android:text="请输入验证码："
+                android:textColor="#FF666666"
+                android:textSize="15sp" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/yz1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_stroke_black2"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/yz2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_stroke_black2"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/yz3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_stroke_black2"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/yz4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/bg_stroke_black2"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="14dp"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/yz"
+                    android:layout_width="222dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="21dp"
+                    android:singleLine="true"
+                    android:textColor="#00000000" />
+            </FrameLayout>
+            <com.hjq.widget.view.CountdownView
+                android:id="@+id/cv_phone_verify_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="51dp"
+                android:drawablePadding="5dp"
+                android:text="获得验证码"
+                android:textColor="#FFFF9001"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+</LinearLayout>

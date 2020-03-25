@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/share_bg"
+    tools:context=".ui.activity.CopyActivity">
+
+
+    <LinearLayout
+        android:layout_width="306dp"
+        android:layout_height="552.05dp"
+        android:background="@drawable/share_img"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="305dp"
+            android:layout_height="317dp"
+            android:layout_marginTop="45dp"
+            app:srcCompat="@mipmap/test_1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="6.5dp"
+            android:layout_marginTop="15.5dp"
+            android:text="七喜—牙牙" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6.5dp"
+            android:layout_marginLeft="7.5dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="11sp"
+            android:text="ID：7846591639" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_radius_orange"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="11sp"
+            android:text="24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bao_cun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_radius_stroke_black"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="right"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="14sp"
+            android:text="保存" />
+    </LinearLayout>
+
+</LinearLayout>

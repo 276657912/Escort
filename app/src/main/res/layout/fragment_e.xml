@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.CopyFragment">
+
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/icon_setting" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15.5dp"
+            android:src="@drawable/icon_share" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:id="@+id/to_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="21dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/head_image"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_margin="10dp"
+                    tools:src="@mipmap/test_1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="七喜—牙牙"
+                            android:textColor="#FF333333"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/icon_edit" />
+
+                        <TextView
+                            android:id="@+id/my_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="45dp"
+                            android:background="@drawable/button_radius_orange"
+                            android:drawableRight="@drawable/icon_white_right"
+                            android:drawablePadding="5dp"
+                            android:text="我的钱包"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/user_qian_ming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="个性签名个性签名个性签名个性签名"
+                        android:textColor="#FF666666"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gz"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/icon_gz"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    tools:text="关注，6"
+                    android:textColor="#FF333333"
+                    android:textSize="11sp" />
+
+                <View
+                    style="@style/VerticalLineStyle"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/fs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/icon_fs"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    tools:text="粉丝，2"
+                    android:textColor="#FF333333"
+                    android:textSize="11sp" />
+
+                <View
+                    style="@style/VerticalLineStyle"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/dz"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/icon_dz"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    tools:text="喜欢我，8"
+                    android:textColor="#FF333333"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/open_vip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/open_vip" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/mytab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                app:tabGravity="center"
+                app:tabIndicatorColor="#ffffff"
+                app:tabMaxWidth="0dp"
+                app:tabTextAppearance="@style/MyTabLayoutStyle"
+                app:tabMode="fixed"
+                app:tabTextColor="#FF666666"
+                app:tabMinWidth="80dp"
+                app:tabSelectedTextColor="#FF000000"/>
+
+            <com.hjq.widget.layout.NoScrollViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#E7E7E7"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

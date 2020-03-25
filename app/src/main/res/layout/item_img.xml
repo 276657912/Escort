@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.widget.square.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E7E7E7"
+    tools:context=".ui.adapter.PhotoAdapter">
+
+    <com.hjq.widget.view.ScaleImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_margin="5dp"
+        app:scaleRatio="0.95"
+        android:src="@mipmap/test_1" />
+
+</com.hjq.widget.square.SquareFrameLayout>

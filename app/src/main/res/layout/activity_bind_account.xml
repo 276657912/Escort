@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F1F4"
+    android:orientation="vertical"
+    tools:context=".ui.activity.CopyActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightColor="#FF333333"
+        app:title="账户绑定"
+        app:titleSize="17sp" />
+
+    <LinearLayout
+        android:id="@+id/to_next"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/icon_zfb"
+            android:drawablePadding="5dp"
+            android:textColor="#FF333333"
+            android:text="绑定支付宝账号" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textSize="14sp"
+            android:textColor="#FF333333"
+            android:text=""
+            android:drawableRight="@drawable/ico_go_black"
+            android:drawablePadding="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>
