@@ -118,6 +118,11 @@
             android:label="@string/phone_verify_title"
             android:screenOrientation="portrait" /> <!-- 手机号更换 -->
         <activity
+            android:name=".ui.activity.DataPublishActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/phone_verify_title"
+            android:screenOrientation="portrait" /> <!-- 发布酒吧招募-->
+        <activity
             android:name=".ui.activity.PhoneResetActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/phone_reset_title"

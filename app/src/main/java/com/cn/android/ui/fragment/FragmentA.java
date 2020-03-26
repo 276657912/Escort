@@ -1,7 +1,9 @@
 package com.cn.android.ui.fragment;
 
 
+import android.app.Activity;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -13,21 +15,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.cn.android.R;
+import com.cn.android.bean.BarRecruitBean;
+import com.cn.android.bean.EscortRecruitmentBean;
 import com.cn.android.common.MyLazyFragment;
+import com.cn.android.network.Constant;
+import com.cn.android.network.GsonUtils;
+import com.cn.android.network.ServerUrl;
+import com.cn.android.presenter.PublicInterfaceePresenetr;
+import com.cn.android.presenter.view.PublicInterfaceView;
 import com.cn.android.ui.activity.AddressActivity;
 import com.cn.android.ui.activity.BuyVIPActivity;
 import com.cn.android.ui.activity.CopyActivity;
+import com.cn.android.ui.activity.DataPublishActivity;
 import com.cn.android.ui.activity.HomeActivity;
 import com.cn.android.ui.activity.HomePageActivity;
 import com.cn.android.ui.activity.MyDataActivity;
 import com.cn.android.ui.activity.MyDataPublishActivity;
 import com.cn.android.ui.adapter.AMenu1Adapter;
 import com.cn.android.ui.adapter.AMenu2Adapter;
+import com.cn.android.utils.SPUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.dialog.base.BaseDialog;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -38,7 +51,7 @@ import butterknife.OnClick;
  * time   : 2018/10/18
  * desc   : 可进行拷贝的副本
  */
-public final class FragmentA extends MyLazyFragment<CopyActivity> {
+public final class FragmentA extends MyLazyFragment<CopyActivity> implements PublicInterfaceView {
 
     @BindView(R.id.title)
     FrameLayout title;
@@ -62,6 +75,12 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
     LinearLayout linearChoice;
     private AMenu1Adapter menu1Adapter;
     private AMenu2Adapter menu2Adapter;
+    private int page = 1;
+    PublicInterfaceePresenetr presenetr;
+    private List<EscortRecruitmentBean> escorts;
+    private List<BarRecruitBean> recrui;
+    private String sex="";
+    private String city="";
 
     public static FragmentA newInstance() {
         return new FragmentA();
@@ -77,20 +96,19 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
         ((HomeActivity) getActivity()).showGif(true);
         ImmersionBar.setTitleBar(getAttachActivity(), title);
         choseType(1);
+        sex = "";
     }
 
     @Override
     protected void initData() {
+        presenetr = new PublicInterfaceePresenetr(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         menu1Adapter = new AMenu1Adapter(getActivity());
         menu2Adapter = new AMenu2Adapter(getActivity());
         recyclerView.setAdapter(menu1Adapter);
-        List<String> data = new ArrayList<>();
-        data.add(new String());
-        data.add(new String());
-        data.add(new String());
-        menu1Adapter.replaceData(data);
-        menu2Adapter.replaceData(data);
+        getdata();
+
+
         menu1Adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
@@ -104,6 +122,13 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
                 }
             }
         });
+    }
+
+
+    public void getdata() {
+        showLoading();
+        presenetr.getPostRequest(getActivity(), ServerUrl.selectEscortHomeList, Constant.selectEscortHomeList);
+        presenetr.getPostRequest(getActivity(), ServerUrl.selectBarHomeList, Constant.selectBarHomeList);
     }
 
     private void showVIPDialog() {
@@ -139,6 +164,8 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
                 menu1.setTextColor(Color.parseColor("#FFFFFF"));
                 menu2.setTextColor(Color.parseColor("#000000"));
                 recyclerView.setAdapter(menu1Adapter);
+                showLoading();
+                presenetr.getPostRequest(getActivity(), ServerUrl.selectEscortHomeList, Constant.selectEscortHomeList);
                 break;
             case R.id.menu_2:
                 menu1.setBackground(null);
@@ -148,18 +175,23 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
                 menu1.setTextColor(Color.parseColor("#000000"));
                 menu2.setTextColor(Color.parseColor("#FFFFFF"));
                 recyclerView.setAdapter(menu2Adapter);
+                showLoading();
+                presenetr.getPostRequest(getActivity(), ServerUrl.selectBarHomeList, Constant.selectBarHomeList);
                 break;
             case R.id.add:
                 showAddDialog();
                 break;
             case R.id.choice1:
                 choseType(1);
+                sex = "";
                 break;
             case R.id.choice2:
                 choseType(2);
+                sex = "男";
                 break;
             case R.id.choice3:
                 choseType(3);
+                sex = "女";
                 break;
         }
     }
@@ -180,11 +212,13 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
             @Override
             public void onClick(BaseDialog dialog, View view) {
                 dialog.dismiss();
-                startActivity(MyDataPublishActivity.class);
+                startActivity(DataPublishActivity.class);
             }
         });
+
         builder.show();
     }
+
 
     private void choseType(int i) {
         choice1.setBackground(null);
@@ -217,5 +251,64 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> {
 
                 break;
         }
+    }
+
+    @Override
+    public Map<String, Object> setPublicInterfaceData(int tag) {
+        Map<String, Object> map = new HashMap<>();
+        switch (tag) {
+            case Constant.selectBarHomeList:
+                map.put("city", city==null?"西安市":city);
+                map.put("page", page);
+                map.put("rows", 10);
+                return map;
+            case Constant.selectEscortHomeList:
+                map.put("city", city==null?"西安市":city);//地区
+                map.put("sex", sex);//性别  男  女
+                map.put("page", page);
+                map.put("rows", 10);
+                return map;
+
+        }
+        return null;
+    }
+
+    @Override
+    public void onPublicInterfaceSuccess(int code, String data, String msg, int tag) {
+        showComplete();
+        View view = View.inflate(getContext(), R.layout.no_data_layout, null);     switch (tag) {
+            case Constant.selectBarHomeList:
+                recrui = GsonUtils.getPersons(data, BarRecruitBean.class);
+                menu2Adapter.setNewData(recrui);
+
+                if (recrui.size() == 0)
+                    menu2Adapter.setEmptyView(view);
+                break;
+            case Constant.selectEscortHomeList:
+                escorts = GsonUtils.getPersons(data, EscortRecruitmentBean.class);
+                menu1Adapter.setNewData(escorts);
+                if (escorts.size() == 0)
+                    menu1Adapter.setEmptyView(view);
+
+                break;
+
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        city = SPUtils.getString("city", "西安市");
+        adr.setText(city);
+        if (presenetr != null)
+            getdata();
+
+    }
+
+    @Override
+    public void onPublicInterfaceError(String error, int tag) {
+        showComplete();
+        Log.e("error", error);
+
     }
 }

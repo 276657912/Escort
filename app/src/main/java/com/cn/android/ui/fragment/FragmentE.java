@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.cn.android.R;
 import com.cn.android.common.MyLazyFragment;
@@ -60,7 +61,7 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
     @BindView(R.id.open_vip)
     ImageView openVip;
     @BindView(R.id.view_pager)
-    NoScrollViewPager mViewPager;
+    ViewPager mViewPager;
     List<String> mTitle;
     List<Fragment> mFragment;
     @BindView(R.id.mytab)
@@ -87,8 +88,8 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
 
     @Override
     protected void initData() {
-        mViewPager.setNoScroll(true);//不能滑动
-        mViewPager.setScrollAnim(false);//无动画
+//        mViewPager.setNoScroll(true);//不能滑动
+//        mViewPager.setScrollAnim(false);//无动画
         mTitle = new ArrayList<>();
         mTitle.add("伴游");
         mTitle.add("照片");

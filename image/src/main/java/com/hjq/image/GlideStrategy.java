@@ -56,7 +56,7 @@ final class GlideStrategy implements ImageStrategy {
         }
 
         if (loader.width != 0 && loader.height != 0) {
-            builder.override(loader.width, loader.height);
+//            builder.override(loader.width, loader.height);
         }
 
         builder.into(loader.view);
@@ -79,7 +79,7 @@ final class GlideStrategy implements ImageStrategy {
         } else if (object instanceof Fragment) {
             return Glide.with((Fragment) object);
         } else if (object instanceof androidx.fragment.app.Fragment) {
-            return Glide.with((androidx.fragment.app.Fragment) object);
+//            return Glide.with((androidx.fragment.app.Fragment) object);
         }
         // 如果不是上面这几种类型就直接抛出异常
         throw new IllegalArgumentException("This object is illegal");

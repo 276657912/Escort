@@ -13,20 +13,21 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
-
+        <!--android:paddingLeft="11.5dp"-->
+        <!--android:paddingTop="5dp"-->
+        <!--android:paddingRight="11.5dp"-->
+        <!--android:paddingBottom="5dp"-->
         <TextView
             android:id="@+id/adr"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
+            android:layout_width="@dimen/space_140"
+            android:layout_height="@dimen/space_44"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15.5dp"
             android:background="@drawable/bg_radius_black"
             android:drawableRight="@drawable/icon_switch"
-            android:paddingLeft="11.5dp"
-            android:paddingTop="5dp"
-            android:paddingRight="11.5dp"
-            android:paddingBottom="5dp"
+            android:gravity="center"
             android:text="西安市"
+            android:paddingRight="@dimen/space_24"
             android:textColor="@color/white"
             android:textSize="11sp" />
 
@@ -46,7 +47,7 @@
                 android:gravity="center"
                 android:text="陪伴招募"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="@dimen/sp_12" />
 
             <TextView
                 android:id="@+id/menu_2"
@@ -54,6 +55,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="@dimen/sp_12"
                 android:text="酒吧招募" />
         </LinearLayout>
 

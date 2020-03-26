@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="49.5dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/paeckge_type"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:text="连续包月"
+        android:textColor="#FF333333"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/packge_price"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:text="（28元/月）"
+        android:textColor="#FF999999"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/packge_money"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:gravity="right|center_vertical"
+        android:text="￥20" />
+
+</LinearLayout>

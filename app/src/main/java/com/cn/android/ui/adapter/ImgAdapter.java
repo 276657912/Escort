@@ -26,6 +26,7 @@ public class ImgAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, String item) {
+        ImageLoader.with(helper.itemView.getContext()).load(item).circle(10).into(helper.getView(R.id.img));
 //        ImageView view = helper.getView(R.id.img);
 //        ImageLoader.with(context)
 //                .load(item)

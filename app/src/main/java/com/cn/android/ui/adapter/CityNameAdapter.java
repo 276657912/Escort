@@ -22,7 +22,7 @@ public class CityNameAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
     @Override
     protected void convert(BaseViewHolder helper, String item) {
         helper.setText(R.id.name,item);
-
+        helper.addOnClickListener(R.id.name);
     }
 
 }

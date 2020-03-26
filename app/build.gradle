@@ -152,7 +152,10 @@ dependencies {
 
     // Dex 分包，解决 64k 方法问题
     //implementation 'androidx.multidex:multidex:2.0.1'
-
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-30'
+    //图片
+    implementation 'com.github.SheHuan:NiceImageView:1.0.5'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.0'
     // ButterKnife 注解库：https://github.com/JakeWharton/butterknife
     implementation 'com.jakewharton:butterknife:10.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'

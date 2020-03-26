@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.cn.android.R;
+import com.cn.android.bean.VipLogo;
+import com.cn.android.bean.VipPeackge;
+import com.hjq.image.ImageLoader;
 
 
 /**
@@ -16,7 +19,7 @@ import com.cn.android.R;
  *    time   : 2018/11/05
  *    desc   : 可进行拷贝的副本
  */
-public final class BuyVIPAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public final class BuyVIPAdapter extends BaseQuickAdapter<VipLogo, BaseViewHolder> {
 
     private Context context;
     RecyclerView recyclerView;
@@ -27,6 +30,9 @@ public final class BuyVIPAdapter extends BaseQuickAdapter<String, BaseViewHolder
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, String item) {
+    protected void convert(BaseViewHolder helper, VipLogo item) {
+        ImageLoader.with(helper.itemView.getContext()).load(item.getImgUrl()).into(helper.getView(R.id.image_view));
+        helper.setText(R.id.vip_title,item.getTitle());
+        helper.setText(R.id.content,item.getContent());
     }
 }

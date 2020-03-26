@@ -9,21 +9,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.cn.android.R;
+import com.cn.android.bean.EscortRecruitmentBean;
+import com.hjq.image.ImageLoader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject
- *    time   : 2018/11/05
- *    desc   : 可进行拷贝的副本
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/AndroidProject
+ * time   : 2018/11/05
+ * desc   : 可进行拷贝的副本
  */
-public final class AMenu1Adapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public final class AMenu1Adapter extends BaseQuickAdapter<EscortRecruitmentBean, BaseViewHolder> {
 
     private Context context;
     RecyclerView recyclerView;
+    private String[] list;
+    List<String> data;
 
     public AMenu1Adapter(Context context) {
         super(R.layout.item_menu1);
@@ -31,20 +36,30 @@ public final class AMenu1Adapter extends BaseQuickAdapter<String, BaseViewHolder
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, String item) {
-        recyclerView=helper.getView(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(context,3));
-        ImgAdapter adapter=new ImgAdapter(context);
-        recyclerView.setAdapter(adapter);
-        List<String> data=new ArrayList<>();
-        data.add(new String());
-        data.add(new String());
-        data.add(new String());
-        data.add(new String());
-        data.add(new String());
-        data.add(new String());
-        adapter.replaceData(data);
+    protected void convert(BaseViewHolder helper, EscortRecruitmentBean item) {
+        helper.setText(R.id.title, item.getTitle());
+        helper.setText(R.id.time, String.format("发布时间：%s", item.getTrip_time()));
+        helper.setText(R.id.content, item.getContent());
+        helper.setText(R.id.address, String.format("目的地：%s", item.getTo_address()));
+        helper.setText(R.id.start_time, String.format("出发时间：%s", item.getCtime()));
+        helper.setText(R.id.obj, String.format("对象：%s", item.getObjects()));
+        helper.setText(R.id.user_name, item.getNickname());
+        helper.setGone(R.id.is_vip, item.getVip() == 1);
+        ImageLoader.with(helper.itemView.getContext()).load(item.getHeadimg()).into(helper.getView(R.id.user_img));
         helper.addOnClickListener(R.id.to_homepage);
         helper.addOnClickListener(R.id.to_buy_vip);
+        if (item.getImg_urls().contains(",")) {
+            list = item.getImg_urls().split(",");
+            data = Arrays.asList(list);
+        } else {
+            data = new ArrayList<>();
+            data.add(item.getImg_urls());
+        }
+        recyclerView = helper.getView(R.id.recyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
+        ImgAdapter adapter = new ImgAdapter(context);
+        recyclerView.setAdapter(adapter);
+        adapter.replaceData(data);
+
     }
 }

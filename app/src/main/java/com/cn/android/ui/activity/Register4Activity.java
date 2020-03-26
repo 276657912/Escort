@@ -100,6 +100,7 @@ public final class Register4Activity extends MyActivity implements FileOperation
             if (amapLocation != null) {
                 if (amapLocation.getErrorCode() == 0) {
                     city = amapLocation.getCity();
+
                     Log.e("123", "onLocationChanged = " + amapLocation.getCity());
                 } else {
                     Log.e("AmapError", "location Error, ErrCode:"

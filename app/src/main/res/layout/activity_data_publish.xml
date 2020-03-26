@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:leftIcon="@color/white"
+        app:rightColor="@color/black"
+        app:rightSize="@dimen/sp_14"
+        app:rightTitle="取消"
+        />
+    <TextView
+        android:id="@+id/adr"
+        android:layout_width="@dimen/space_140"
+        android:layout_height="@dimen/space_50"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15.5dp"
+        android:layout_marginBottom="@dimen/space_40"
+        android:background="@drawable/bg_radius_black"
+        android:drawableRight="@drawable/icon_switch"
+        android:gravity="center"
+        android:paddingRight="@dimen/space_24"
+        android:text="西安市"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/title_bar"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/img_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_26"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_bar" />
+
+    <EditText
+        android:id="@+id/edit_contant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_280"
+        android:layout_margin="@dimen/space_26"
+        android:background="@drawable/bg_home_search_bar_gray"
+        android:gravity="left|top"
+        android:hint="添加想说的话..."
+        android:padding="@dimen/space_26"
+        app:layout_constraintTop_toBottomOf="@+id/img_recycle" />
+
+    <TextView
+        android:id="@+id/push_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_100"
+        android:layout_margin="@dimen/space_26"
+        android:background="@drawable/btn_black_r_40_bg"
+        android:gravity="center"
+        android:text="发 布"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
