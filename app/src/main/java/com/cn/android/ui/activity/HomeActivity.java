@@ -11,9 +11,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.cn.android.R;
+import com.cn.android.bean.UserBean;
 import com.cn.android.common.MyActivity;
 import com.cn.android.helper.ActivityStackManager;
 import com.cn.android.helper.DoubleClickHelper;
+import com.cn.android.network.Constant;
+import com.cn.android.network.GsonUtils;
+import com.cn.android.network.ServerUrl;
+import com.cn.android.presenter.PublicInterfaceePresenetr;
+import com.cn.android.presenter.view.PublicInterfaceView;
 import com.cn.android.ui.fragment.FragmentA;
 import com.cn.android.ui.fragment.FragmentB;
 import com.cn.android.ui.fragment.FragmentC;
@@ -21,6 +27,10 @@ import com.cn.android.ui.fragment.FragmentD;
 import com.cn.android.ui.fragment.FragmentE;
 import com.cn.android.utils.SPUtils;
 import com.hjq.image.ImageLoader;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,7 +42,7 @@ import butterknife.OnClick;
  * time   : 2018/10/18
  * desc   : 主页界面
  */
-public final class HomeActivity extends MyActivity {
+public final class HomeActivity extends MyActivity implements PublicInterfaceView {
 
     @BindView(R.id.home_context)
     FrameLayout homeContext;
@@ -73,6 +83,7 @@ public final class HomeActivity extends MyActivity {
     @Override
     protected void initView() {
         onViewClicked(tab1);
+        presenetr=new PublicInterfaceePresenetr(this);
     }
 
     @Override
@@ -228,9 +239,43 @@ public final class HomeActivity extends MyActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
+    protected void onResume() {
+        super.onResume();
+        if(!isUserLogin()){
+            return;
+        }
+        presenetr.getPostRequest(this, ServerUrl.selectAppUserByuserid, Constant.selectAppUserByuserid);
+    }
+
+    @Override
+    public Map<String, Object> setPublicInterfaceData(int tag) {
+        Map<String, Object> paramsMap = new HashMap<>();
+        switch (tag) {
+            case  Constant.selectAppUserByuserid:
+                paramsMap.put("userid",userBean().getId());
+                return paramsMap;
+        }
+        return paramsMap;
+    }
+
+    @Override
+    public void onPublicInterfaceSuccess(int code, String data, String msg, int tag) {
+        if(code==200){
+            switch (tag) {
+                case  Constant.selectAppUserByuserid:
+                    UserBean bean = GsonUtils.getPerson(data, UserBean.class);
+                    SPUtils.putString("token", bean.getToken());
+                    saveUserBean(bean);
+                    if(null!=fragmentE){
+                        fragmentE.upData();
+                    }
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onPublicInterfaceError(String error, int tag) {
+
     }
 }

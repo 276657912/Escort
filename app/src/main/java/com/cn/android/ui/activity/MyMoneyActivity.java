@@ -3,10 +3,12 @@ package com.cn.android.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.cn.android.R;
 import com.cn.android.common.MyActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -18,6 +20,9 @@ import butterknife.OnClick;
  */
 public final class MyMoneyActivity extends MyActivity {
 
+    @BindView(R.id.money)
+    TextView money;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_my_money;
@@ -25,12 +30,17 @@ public final class MyMoneyActivity extends MyActivity {
 
     @Override
     protected void initView() {
-
     }
 
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        money.setText(userBean().getUmoney());
     }
 
     @OnClick({R.id.ti_xian, R.id.ming_xi})
@@ -44,4 +54,5 @@ public final class MyMoneyActivity extends MyActivity {
                 break;
         }
     }
+
 }

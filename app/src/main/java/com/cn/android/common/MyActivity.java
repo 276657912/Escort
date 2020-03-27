@@ -401,11 +401,11 @@ public abstract class MyActivity extends BaseActivity
     }
 
     public UserBean userBean() {
-        if (SPUtils.contains("UserBean")) {
+//        if (SPUtils.contains("UserBean")) {
             userBean = GsonUtils.getPerson(SPUtils.getString("UserBean", ""), UserBean.class);
-        }else{
-            return new UserBean();
-        }
+//        }else{
+//            return new UserBean();
+//        }
         return userBean;
     }
 

@@ -105,6 +105,7 @@ public final class RegisterActivity extends MyActivity implements PublicInterfac
 
     @Override
     public void onPublicInterfaceError(String error, int tag) {
+        showComplete();
         toast(error);
     }
 }

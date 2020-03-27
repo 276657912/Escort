@@ -29,6 +29,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="22dp"
@@ -51,6 +52,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/pay_money"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="22dp"
@@ -73,6 +75,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/pay_type"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="22dp"
@@ -95,6 +98,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/u_money"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="22dp"
@@ -117,6 +121,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="22dp"

@@ -40,5 +40,6 @@ public class ServerUrl {
     public static String judgePassword=defaultIp+"/app/login/judgePassword";//登录  第二步（输入密码）
     public static String selectAppUserByPhone=defaultIp+"/app/login/selectAppUserByPhone";//登录/注册  第一步（返回200跳转输入密码登录，返回500去注册）
     public static String sendSms=defaultIp+"/app/login/sendSms";//发送短信
+    public static String selectAppUserByuserid=defaultIp+"/app/user/selectAppUserByuserid";//个人信息
 
 }

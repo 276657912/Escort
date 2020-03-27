@@ -36,4 +36,5 @@ public class Constant {
     public static final int judgePassword=1029;
     public static final int selectAppUserByPhone=1030;
     public static final int sendSms=1031;
+    public static final int selectAppUserByuserid=1032;
 }

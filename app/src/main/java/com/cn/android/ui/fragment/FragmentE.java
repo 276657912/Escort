@@ -158,7 +158,7 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
         upData();
     }
 
-    private void upData() {
+    public void upData() {
         if (!isUserLogin()) {
             return;
         }
@@ -194,7 +194,7 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
                 startActivity(LoveMeActivity.class);
                 break;
             case R.id.my_money:
-                if (userBean().getIsAccount()==2) {
+                if (userBean().getIsAccount()==1) {
                     startActivity(MyMoneyActivity.class);
                 } else {
                     startActivity(BindAccountActivity.class);

@@ -55,7 +55,6 @@
             android:drawableLeft="@drawable/ic_small_safe"
             android:drawablePadding="15dp"
             android:hint="@string/common_code_input_hint"
-            android:maxLength="4"
             android:paddingLeft="20dp"
             android:paddingTop="18dp"
             android:paddingRight="20dp"

@@ -88,7 +88,9 @@ public final class BindAliAccountActivity extends MyActivity implements PublicIn
             return;
         }
         UserBean bean=userBean();
-        bean.setIsAccount(2);
+        bean.setAlipayNo(alipayno);
+        bean.setRealname(realname);
+        bean.setIsAccount(1);
         saveUserBean(bean);
         this.finish();
     }

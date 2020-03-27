@@ -88,6 +88,7 @@ public class PublicInterfaceImpl implements PublicInterfaceBiz {
             paramsMap = new HashMap<>();
         }
         L.e("Https", "Post params = " + new Gson().toJson(params));
+        L.e("Https", "authorization = " + SPUtils.getString("token",""));
         OkHttpUtils.post().url(url)
                 .addHeader("authorization", SPUtils.getString("token",""))
                 .params(params)

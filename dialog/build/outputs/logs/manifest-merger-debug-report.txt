@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from H:\banyou\dialog\src\main\AndroidManifest.xml:1:1-38
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml:1:1-38
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml:1:1-38
+ADDED from E:\work\Escort\dialog\src\main\AndroidManifest.xml:1:1-38
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml:1:1-38
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml:1:1-38
 	package
-		ADDED from H:\banyou\dialog\src\main\AndroidManifest.xml:1:11-35
-		INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
-		INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
+		ADDED from E:\work\Escort\dialog\src\main\AndroidManifest.xml:1:11-35
+		INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+		INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from H:\banyou\dialog\src\main\AndroidManifest.xml:1:1-38
+		ADDED from E:\work\Escort\dialog\src\main\AndroidManifest.xml:1:1-38
 uses-sdk
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
-INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
-		ADDED from H:\banyou\dialog\src\main\AndroidManifest.xml
-		INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
+		INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+		ADDED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+		INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
-		ADDED from H:\banyou\dialog\src\main\AndroidManifest.xml
-		INJECTED from H:\banyou\dialog\src\main\AndroidManifest.xml
+		INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+		ADDED from E:\work\Escort\dialog\src\main\AndroidManifest.xml
+		INJECTED from E:\work\Escort\dialog\src\main\AndroidManifest.xml

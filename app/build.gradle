@@ -215,6 +215,10 @@ dependencies {
 	
 	// 轮播图 https://github.com/xiaohaibin/XBanner
     implementation 'com.github.xiaohaibin:XBanner:1.7.0'
+
+    // 上拉刷新下拉加载：https://github.com/scwang90/SmartRefreshLayout/tree/master#%E7%AE%80%E5%8D%95%E7%94%A8%E4%BE%8B
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
 	
     androidTestImplementation 'junit:junit:4.12'
     testImplementation "junit:junit:4.12"

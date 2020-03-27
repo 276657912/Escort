@@ -47,12 +47,13 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/alipay_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="12sp"
-            android:text="支付宝账号：16377392090"
+            tools:text="支付宝账号：16377392090"
             android:textColor="#FF666666"
             android:textSize="12sp" />
     </LinearLayout>
@@ -74,6 +75,7 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/money"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="75dp"
@@ -88,11 +90,12 @@
             android:layout_marginLeft="15dp" />
 
         <TextView
+            android:id="@+id/u_money"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:text="可用余额：0.00元"
+            tools:text="可用余额：0.00元"
             android:textColor="#FF999999"
             android:textSize="15sp" />
     </LinearLayout>
