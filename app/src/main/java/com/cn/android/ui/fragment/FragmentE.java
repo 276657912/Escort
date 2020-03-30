@@ -20,9 +20,11 @@ import com.cn.android.ui.activity.CopyActivity;
 import com.cn.android.ui.activity.FansActivity;
 import com.cn.android.ui.activity.FollowActivity;
 import com.cn.android.ui.activity.HomeActivity;
+import com.cn.android.ui.activity.LoginActivity;
 import com.cn.android.ui.activity.LoveMeActivity;
 import com.cn.android.ui.activity.MyEditActivity;
 import com.cn.android.ui.activity.MyMoneyActivity;
+import com.cn.android.ui.activity.RegisterActivity;
 import com.cn.android.ui.activity.SettingActivity;
 import com.cn.android.ui.activity.ShareActivity;
 import com.cn.android.utils.SPUtils;
@@ -160,7 +162,7 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
 
     public void upData() {
         if (!isUserLogin()) {
-            return;
+            startActivity(RegisterActivity.class);
         }
         ImageLoader.with(getActivity()).load(userBean().getHeadimg()).circle().into(headImage);
         userName.setText(userBean().getNickname());
@@ -169,10 +171,10 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
         fs.setText("粉丝，" + userBean().getFansNum());
         dz.setText("喜欢我，" + userBean().getLikeNum());
         switch (userBean().getVip()) {
-            case  0:
+            case 0:
                 openVip.setVisibility(View.VISIBLE);
                 break;
-            case  1:
+            case 1:
                 openVip.setVisibility(View.GONE);
                 break;
         }
@@ -194,7 +196,7 @@ public final class FragmentE extends MyLazyFragment<CopyActivity> {
                 startActivity(LoveMeActivity.class);
                 break;
             case R.id.my_money:
-                if (userBean().getIsAccount()==1) {
+                if (userBean().getIsAccount() == 1) {
                     startActivity(MyMoneyActivity.class);
                 } else {
                     startActivity(BindAccountActivity.class);

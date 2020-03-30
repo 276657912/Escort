@@ -21,6 +21,9 @@ import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.tencent.qcloud.ugckit.UGCKit;
+import com.tencent.rtmp.TXLiveBase;
+import com.tencent.ugc.TXUGCBase;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.cookie.CookieJarImpl;
 import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
@@ -43,6 +46,9 @@ import okhttp3.OkHttpClient;
  */
 public final class MyApplication extends Application {
 
+    private static String LicenceUrl="http://license.vod2.myqcloud.com/license/v1/dbe2c9f8436ba2a99d617e68950856de/TXUgcSDK.licence";
+    private static String Key= "620b6e95d64caf079c8f772113a9eb1d";
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -53,6 +59,19 @@ public final class MyApplication extends Application {
      * 初始化一些第三方框架
      */
     public static void initSDK(Application application) {
+
+        TXLiveBase.setConsoleEnabled(true);
+        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(application);
+        strategy.setAppVersion(TXLiveBase.getSDKVersionStr());
+        CrashReport.initCrashReport(application,strategy);
+
+        UGCKit.init(application);
+        TXLiveBase.getInstance().setLicence(application, LicenceUrl, Key);
+
+        // 短视频licence设置
+        TXUGCBase.getInstance().setLicence(application, LicenceUrl, Key);
+        UGCKit.init(application);
+
         // 这个过程专门用于堆分析的 leak 金丝雀
         // 你不应该在这个过程中初始化你的应用程序
 //        if (LeakCanary.isInAnalyzerProcess(application)) {

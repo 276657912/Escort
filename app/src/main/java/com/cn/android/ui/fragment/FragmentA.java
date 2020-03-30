@@ -29,8 +29,10 @@ import com.cn.android.ui.activity.CopyActivity;
 import com.cn.android.ui.activity.DataPublishActivity;
 import com.cn.android.ui.activity.HomeActivity;
 import com.cn.android.ui.activity.HomePageActivity;
+import com.cn.android.ui.activity.LoginActivity;
 import com.cn.android.ui.activity.MyDataActivity;
 import com.cn.android.ui.activity.MyDataPublishActivity;
+import com.cn.android.ui.activity.RegisterActivity;
 import com.cn.android.ui.adapter.AMenu1Adapter;
 import com.cn.android.ui.adapter.AMenu2Adapter;
 import com.cn.android.utils.SPUtils;
@@ -97,6 +99,9 @@ public final class FragmentA extends MyLazyFragment<CopyActivity> implements Pub
         ImmersionBar.setTitleBar(getAttachActivity(), title);
         choseType(1);
         sex = "";
+        if(!isUserLogin()){
+            startActivity(RegisterActivity.class);
+        }
     }
 
     @Override

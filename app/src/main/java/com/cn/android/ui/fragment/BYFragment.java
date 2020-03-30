@@ -20,7 +20,9 @@ import com.cn.android.network.ServerUrl;
 import com.cn.android.presenter.PublicInterfaceePresenetr;
 import com.cn.android.presenter.view.PublicInterfaceView;
 import com.cn.android.ui.activity.CopyActivity;
+import com.cn.android.ui.activity.LoginActivity;
 import com.cn.android.ui.activity.MyPublishActivity;
+import com.cn.android.ui.activity.RegisterActivity;
 import com.cn.android.ui.adapter.AMenu1Adapter;
 import com.cn.android.ui.adapter.AMenu2Adapter;
 import com.cn.android.ui.adapter.FaBuAdapter;
@@ -81,9 +83,20 @@ public final class BYFragment extends MyLazyFragment<CopyActivity> implements
         getdata();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (presenetr != null)
+            getdata();
+    }
+
     public void getdata() {
-        showLoading();
-        presenetr.getPostRequest(getActivity(), ServerUrl.selectEscortList, Constant.selectEscortList);
+        if (userBean() == null) {
+            startActivity(RegisterActivity.class);
+        } else {
+            showLoading();
+            presenetr.getPostRequest(getActivity(), ServerUrl.selectEscortList, Constant.selectEscortList);
+        }
 
     }
 
@@ -156,7 +169,7 @@ public final class BYFragment extends MyLazyFragment<CopyActivity> implements
                 return map;
             case Constant.deleteEscortById:
                 map.put("id", del_id);
-                break;
+                return  map;
         }
         return null;
     }
@@ -167,7 +180,7 @@ public final class BYFragment extends MyLazyFragment<CopyActivity> implements
         View view = View.inflate(getContext(), R.layout.no_data_layout, null);
         switch (tag) {
             case Constant.selectEscortList:
-                if(page==1&&list.size()>0){
+                if (page == 1 && list.size() > 0) {
                     list.clear();
                 }
                 list = GsonUtils.getPersons(data, MyEscortBean.class);

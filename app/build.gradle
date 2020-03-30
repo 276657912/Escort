@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileVersion
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     // 使用 JDK 1.8
     compileOptions {
@@ -13,7 +14,7 @@ android {
         // 无痛修改包名：https://www.jianshu.com/p/17327e191d2e
         applicationId "com.cn.android.ganyu"
         minSdkVersion 21
-        targetSdkVersion rootProject.ext.targetVersion
+        targetSdkVersion 28
         versionCode 10
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -137,7 +138,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 依赖 libs 目录下所有 aar 包
     //implementation fileTree(include: ['*.aar'], dir: 'libs')
-
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
     // 基础库（不包任何第三方框架）
     implementation project(':base')
     // 自定义 View
@@ -146,6 +149,11 @@ dependencies {
     implementation project(':image')
     implementation project(':dialog')
 
+    implementation project(':videoediter')
+    implementation project(':videojoiner')
+    implementation project(':videorecorder')
+    implementation project(':beauty')
+    implementation project(':ugckit')
     // 谷歌 Support 包
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompatVersion"
     implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
@@ -184,7 +192,8 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     // ViewPager 指示器：https://github.com/romandanylyk/PageIndicatorView
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
-
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation 'com.squareup.okio:okio:1.13.0'
     // Bugly 异常捕捉：https://bugly.qq.com/docs/user-guide/instruction-manual-android/?v=20190418140644
     implementation 'com.tencent.bugly:crashreport:3.0.1'
     implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
@@ -205,6 +214,7 @@ dependencies {
     //开源日志库Logger的使用 https://github.com/orhanobut/logger
     implementation 'com.orhanobut:logger:2.2.0'
 
+
     //LitePal数据库框架 https://www.jianshu.com/p/c56e56f10648
     implementation 'org.litepal.android:java:3.0.0'
 
@@ -224,6 +234,11 @@ dependencies {
     testImplementation "junit:junit:4.12"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.amap.api:location:3.3.0'
+    //时间选择
+    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+     //腾讯短视频
+//    implementation (name:'LiteAVSDK_Professional_7.0.8670', ext:'aar')
+    implementation (name:'LiteAVSDK_UGC', ext:'aar')
     // 网络请求（待发布）：https://github.com/getActivity/EasyHttp
     //第三方登录、分享封装库: https://github.com/tianzhijiexian/ShareLoginLib
     // 国际化：https://github.com/getActivity/MultiLanguages
@@ -237,4 +252,9 @@ dependencies {
     // 图片压缩：https://github.com/Curzibn/Luban
     // 对象存储：https://github.com/leavesC/DoKV
     // 数据注入：https://github.com/JumeiRdGroup/Parceler
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
 }

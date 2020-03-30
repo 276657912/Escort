@@ -24,6 +24,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!--用于申请调用A-GPS模块-->
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.Camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <application
         android:name=".common.MyApplication"
         android:allowBackup="false"
@@ -93,10 +99,18 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.Register4Activity"
+        android:name=".ui.activity.Register4Activity"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:screenOrientation="portrait" />
+        <!-- 设置界面 -->
+        <activity
+            android:name=".ui.activity.MyPushEscortActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
-        <!-- 设置界面 -->
+        <activity
+            android:name=".ui.activity.MyPushSelectActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.SettingActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"

@@ -83,7 +83,7 @@ public final class HomeActivity extends MyActivity implements PublicInterfaceVie
     @Override
     protected void initView() {
         onViewClicked(tab1);
-        presenetr=new PublicInterfaceePresenetr(this);
+        presenetr = new PublicInterfaceePresenetr(this);
     }
 
     @Override
@@ -92,15 +92,15 @@ public final class HomeActivity extends MyActivity implements PublicInterfaceVie
         gif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(MyPushSelectActivity.class);
             }
         });
     }
 
-    public void showGif(boolean isShow){
-        if(isShow){
+    public void showGif(boolean isShow) {
+        if (isShow) {
             gif.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             gif.setVisibility(View.GONE);
         }
     }
@@ -136,6 +136,7 @@ public final class HomeActivity extends MyActivity implements PublicInterfaceVie
         img5.setImageResource(R.drawable.tab_icon_5_1);
         tab32.setVisibility(View.GONE);
         switch (view.getId()) {
+
             case R.id.tab_1:
                 img1.setImageResource(R.drawable.tab_icon_1_2);
                 changeContent(1);
@@ -241,7 +242,7 @@ public final class HomeActivity extends MyActivity implements PublicInterfaceVie
     @Override
     protected void onResume() {
         super.onResume();
-        if(!isUserLogin()){
+        if (!isUserLogin()) {
             return;
         }
         presenetr.getPostRequest(this, ServerUrl.selectAppUserByuserid, Constant.selectAppUserByuserid);
@@ -251,8 +252,8 @@ public final class HomeActivity extends MyActivity implements PublicInterfaceVie
     public Map<String, Object> setPublicInterfaceData(int tag) {
         Map<String, Object> paramsMap = new HashMap<>();
         switch (tag) {
-            case  Constant.selectAppUserByuserid:
-                paramsMap.put("userid",userBean().getId());
+            case Constant.selectAppUserByuserid:
+                paramsMap.put("userid", userBean().getId());
                 return paramsMap;
         }
         return paramsMap;
@@ -260,13 +261,13 @@ public final class HomeActivity extends MyActivity implements PublicInterfaceVie
 
     @Override
     public void onPublicInterfaceSuccess(int code, String data, String msg, int tag) {
-        if(code==200){
+        if (code == 200) {
             switch (tag) {
-                case  Constant.selectAppUserByuserid:
+                case Constant.selectAppUserByuserid:
                     UserBean bean = GsonUtils.getPerson(data, UserBean.class);
                     SPUtils.putString("token", bean.getToken());
                     saveUserBean(bean);
-                    if(null!=fragmentE){
+                    if (null != fragmentE) {
                         fragmentE.upData();
                     }
                     break;

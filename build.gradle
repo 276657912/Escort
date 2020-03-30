@@ -16,9 +16,26 @@ allprojects {
         google()
         maven {url "https://jitpack.io"}
         maven {url 'https://maven.google.com'}
+        maven { url "https://dl.bintray.com/tencentqcloudterminal/maven" }
+        flatDir {
+            dirs 'src/main/jniLibs'
+            dirs project(':app').file('libs')
+
+        }
+
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+ext {
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+    minSdkVersion = 16
+    targetSdkVersion = 28
+    supportSdkVersion = "26.0.0"
+    versionCode=10
+    versionName="1.1"
+    ndkAbi="armeabi-v7a"
 }
